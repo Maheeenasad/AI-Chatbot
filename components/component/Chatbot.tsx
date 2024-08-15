@@ -11,13 +11,13 @@ export function Chatbot() {
   api: "api/chat",
 });
   return (
-    <div className="flex flex-col h-[80vh] w-full max-w-[672px] mx-auto bg-background rounded-lg shadow-lg">
+    <div className="flex flex-col h-[80vh] w-full max-w-[672px] mx-auto bg-background rounded-lg shadow-lg bg-blue-950">
       <div className="flex-1 overflow-auto p-6">
         {
           messages.length === 0 &&(
             <div className="flex flex-col justify-center items-center h-full">
-              <Image src="/ai.png" alt="AI" width={80} height={80} />
-              <p className="text-lg text-muted-foreground mt-4">
+              <Image src="/ai2.png" alt="AI" width={80} height={80} />
+              <p className="text-lg text-muted-foreground mt-4 text-white">
                 Welcome to the Chatbot! Ask me anything.
               </p>
 
@@ -30,8 +30,8 @@ export function Chatbot() {
 message.role === "assistant" ? (
   <div key={message.id}
   className="flex items-start gap-3">
-  <div className="p-2 border border-gray-700 rounded-full">
-   <Image src="/ai.png" alt="AI" width={20} height={20} />
+  <div className="p-2 border border-white rounded-full">
+   <Image src="/ai2.png" alt="AI" width={20} height={20} />
   </div>
    <div className="bg-muted rounded-lg p-3 max-w-[70%]">
    <Markdown className="text-sm text-muted-foreground">{message.content}</Markdown>
@@ -52,11 +52,11 @@ message.role === "assistant" ? (
       </div>
       <form
         onSubmit={handleSubmit}
-       className="bg-muted/50 px-4 py-3 flex items-center gap-2">
+       className="bg-muted/50 px-4 py-3 flex items-center gap-2 ">
         <div className="relative flex-1">
           <Textarea
             placeholder="Type your message..."
-            className="rounded-lg pr-12 min-h-[64px]"
+            className="rounded-lg pr-12 min-h-[64px]" 
             rows={1}
             value={input}
             onChange={handleInputChange}
